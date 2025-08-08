@@ -3,8 +3,6 @@ import "dotenv/config";
 
 import { drizzle } from "drizzle-orm/node-postgres";
 
-// Cambia esta línea:
-// const db = drizzle(process.env.DATABASE_URL!);
+import * as schema from "./schema";
 
-// Por esta línea:
-export const db = drizzle(process.env.DATABASE_URL!);
+export const db = drizzle(process.env.DATABASE_URL!, { schema });
